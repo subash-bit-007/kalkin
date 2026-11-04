@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kalkin Intelligence · Purchase Intelligence for factories</title>
+<meta name="description" content="Kalkin Intelligence is desktop software for Indian factories. Purchase Intelligence reads the purchase report from any ERP, finds where the factory pays above a fair price, and shows the proof behind every rupee. Ask Kalkin answers any purchase question in plain words. By Quantum 1 Technologies.">
+<meta property="og:title" content="Kalkin Intelligence">
+<meta property="og:description" content="Find where your factory overpays. Purchase Intelligence and Ask Kalkin, the AI back office for every factory.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='12' y='8' width='15' height='48' rx='7.5' fill='%233b82f6'/%3E%3Crect x='18' y='24' width='40' height='15' rx='7.5' transform='rotate(-48 25 31)' fill='%2312a38c'/%3E%3Crect x='18' y='25' width='40' height='15' rx='7.5' transform='rotate(46 25 33)' fill='%23f59e0b'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Semi+Condensed:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a2a4f;--bg2:#0b3766;--ink:#ffffff;--soft:#dcecff;--mute:#a9c4e4;--line:#dcecff33;--y:#ffd166;--max:1120px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(1200px 600px at 20% -10%,#11508f 0%,transparent 60%),linear-gradient(180deg,#0c3a6c 0%,var(--bg) 40%,#082340 100%);color:var(--ink);font:400 17px/1.6 Barlow,system-ui,Segoe UI,sans-serif;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:48px 48px;opacity:.18}
+a{color:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px;position:relative}
+.cap{font:600 13px/1.4 "Barlow Semi Condensed",Barlow,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--mute)}
+.y{color:var(--y)}
+h1,h2,h3{font-family:"Barlow Semi Condensed",Barlow,sans-serif;font-weight:700;margin:0;letter-spacing:.01em}
+h1{font-size:clamp(38px,6vw,68px);line-height:1.02;text-transform:uppercase}
+h2{font-size:clamp(28px,3.6vw,42px);line-height:1.1;text-transform:uppercase}
+h3{font-size:21px;line-height:1.25}
+p{margin:0}
+.muted{color:var(--soft);opacity:.9}
+/* nav */
+nav{position:sticky;top:0;z-index:10;backdrop-filter:blur(10px);background:#0a2a4fcc;border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;gap:24px;height:64px}
+.brand{display:flex;align-items:center;gap:10px;font:600 14px/1 "Barlow Semi Condensed",sans-serif;letter-spacing:.2em;text-transform:uppercase;text-decoration:none}
+.brand svg{width:26px;height:26px}
+nav .links{margin-left:auto;display:flex;gap:22px}
+nav .links a{text-decoration:none;color:var(--soft);font-size:15px}nav .links a:hover{color:var(--y)}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--y);color:#0b2a4a;font-weight:700;text-decoration:none;padding:12px 20px;border-radius:2px;font-size:16px}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--soft)}
+.btn:hover{filter:brightness(1.05)}
+/* hero */
+.hero{padding:88px 0 72px;display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:center}
+.hero .lead{font-size:clamp(19px,2vw,23px);line-height:1.45;margin-top:22px;max-width:620px}
+.hero .cta{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap}
+.logo-big{width:min(300px,70%);justify-self:center;filter:drop-shadow(0 20px 40px #0006)}
+/* sections */
+section{padding:72px 0;border-top:1px solid var(--line)}
+.head{max-width:760px;margin-bottom:40px}.head h2{margin-top:10px}.head p{margin-top:14px;font-size:19px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.card{border:1px solid #dcecff66;background:#0b3766b3;padding:24px;position:relative}
+.card.on{border-color:var(--y)}
+.card .n{font:600 13px/1 "Barlow Semi Condensed",sans-serif;letter-spacing:.18em;color:var(--y)}
+.card h3{margin:12px 0 8px}
+.tag{position:absolute;top:20px;right:20px;font:600 11px/1 "Barlow Semi Condensed",sans-serif;letter-spacing:.16em;text-transform:uppercase;padding:5px 8px;border:1px solid #dcecff88}
+.card.on .tag{background:var(--y);color:#0b2a4a;border-color:var(--y)}
+.gate{border-top:1px solid var(--line);margin-top:16px;padding-top:12px;font-size:15px}
+.gate .cap{color:var(--y);font-size:11px}
+/* big number */
+.split{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:start}
+.big{font:700 clamp(72px,10vw,120px)/1 "Barlow Semi Condensed",sans-serif;color:var(--y);margin:8px 0 6px}
+.ticks{list-style:none;margin:0;padding:0;display:grid;gap:22px}
+.ticks li{display:grid;grid-template-columns:28px 1fr;gap:12px}
+.ticks svg{width:24px;height:24px;margin-top:3px}
+.ticks b{font-size:19px;display:block;margin-bottom:2px}
+/* matrix */
+.matrix{display:grid;grid-template-columns:170px repeat(6,1fr);gap:8px;font-size:14px}
+.matrix .h{font-weight:600;text-align:center;align-self:end;padding-bottom:4px;color:var(--soft)}
+.matrix .l b{display:block;font-size:17px}.matrix .l{align-self:center;color:var(--mute)}
+.matrix .c{border:1px solid #dcecff55;background:#0b3766aa;text-align:center;padding:16px 4px;font:600 12px/1 "Barlow Semi Condensed",sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--soft)}
+.matrix .c.on{border-color:var(--y);background:#ffd16622;color:var(--y)}
+/* plans */
+.plans{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:880px}
+.price{font:700 44px/1 "Barlow Semi Condensed",sans-serif;margin:14px 0 4px}.price small{font-size:17px;font-weight:500;color:var(--mute)}
+.plans ul{margin:16px 0 0;padding-left:18px}.plans li{margin:6px 0}
+/* contact */
+.contact{display:flex;gap:32px;flex-wrap:wrap;margin-top:28px}
+.contact a{text-decoration:none;font-size:22px;font-weight:600}.contact a:hover{color:var(--y)}
+footer{border-top:1px solid var(--line);padding:28px 0;color:var(--mute);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media (max-width:900px){.hero,.split{grid-template-columns:1fr}.logo-big{display:none}.grid3,.grid4,.plans{grid-template-columns:1fr}nav .links{display:none}
+ .matrix{grid-template-columns:110px repeat(6,minmax(70px,1fr));overflow-x:auto}.matrixwrap{overflow-x:auto}}
+@media (max-width:600px){.matrix{font-size:12px}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute"><defs>
+ <symbol id="k" viewBox="-2 -0.1 66.6 66.6"><g style="isolation:isolate"><rect x="12" y="8" width="15" height="48" rx="7.5" fill="#3b82f6" opacity=".92" style="mix-blend-mode:multiply"/><rect x="18" y="24" width="40" height="15" rx="7.5" transform="rotate(-48 25 31)" fill="#12a38c" opacity=".9" style="mix-blend-mode:multiply"/><rect x="18" y="25" width="40" height="15" rx="7.5" transform="rotate(46 25 33)" fill="#f59e0b" opacity=".9" style="mix-blend-mode:multiply"/></g></symbol>
+ <symbol id="t" viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" fill="#ffd16622" stroke="#ffd166" stroke-width="1.6"/><path d="M5.5 10.5l3 3l6-7" fill="none" stroke="#ffd166" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</defs></svg>
+
+<nav><div class="wrap">
+ <a class="brand" href="#top"><svg><use href="#k"/></svg>Kalkin Intelligence</a>
+ <div class="links"><a href="#problem">Problem</a><a href="#product">Product</a><a href="#roadmap">Roadmap</a><a href="#plans">Plans</a><a href="#contact">Contact</a></div>
+</div></nav>
+
+<main id="top">
+<div class="wrap hero">
+ <div>
+  <div class="cap">Purchase Intelligence · for Indian factories</div>
+  <h1 style="margin-top:14px">Find where your factory <span class="y">overpays.</span></h1>
+  <p class="lead muted">Kalkin reads the purchase report from any ERP, checks every bill against every supplier, month by month, and shows the money you can save, with the proof behind every rupee.</p>
+  <div class="cta"><a class="btn" href="#contact">Start a free pilot</a><a class="btn ghost" href="#product">See how it works</a></div>
+ </div>
+ <svg class="logo-big" viewBox="-2 -0.1 66.6 66.6" role="img" aria-label="Kalkin logo"><use href="#k"/></svg>
+</div>
+
+<section id="problem"><div class="wrap">
+ <div class="head"><div class="cap">The problem</div><h2>India's factories buy <span class="y">₹138 lakh crore</span> a year. Nobody checks every price.</h2>
+ <p class="muted">If just 1% is paid above a fair price, that is ₹1.4 lakh crore lost every year. The data is already in every factory's ERP; nobody has the time to read it.</p></div>
+ <div class="grid3">
+  <div class="card"><div class="n">01</div><h3>Same items, bought again and again</h3><p class="muted">Thousands of bill lines a year, across hundreds of items.</p></div>
+  <div class="card"><div class="n">02</div><h3>Prices differ between suppliers</h3><p class="muted">Even in the same month, for the same item.</p></div>
+  <div class="card"><div class="n">03</div><h3>No team can check every bill</h3><p class="muted">The purchase report sits unused. Too many lines to check by hand.</p></div>
+ </div>
+ <p class="cap" style="margin-top:20px">Source: Annual Survey of Industries 2024-25, MoSPI · 1% is an illustration</p>
+</div></section>
+
+<section id="product"><div class="wrap">
+ <div class="split">
+  <div>
+   <div class="cap">What a factory gets</div>
+   <h2 style="margin-top:10px">Its own savings number, from day one.</h2>
+   <div class="cap y" style="margin-top:36px">First user</div>
+   <div class="big">₹35 L</div>
+   <p style="font-size:19px;font-weight:600">of potential savings found</p>
+   <p class="muted" style="margin-top:6px">A mid-size Indian manufacturer. Actions are under way to realise it this year.</p>
+  </div>
+  <ul class="ticks">
+   <li><svg><use href="#t"/></svg><div><b>What a team can't do by hand, in minutes</b><span class="muted">Kalkin checks every bill line (50,000+ a year) for every item, against every supplier, month by month. It matches the same item under different names and units, sets aside wrong bills, and adds up the money. By hand that is weeks of Excel, every month.</span></div></li>
+   <li><svg><use href="#t"/></svg><div><b>Proof behind every rupee</b><span class="muted">Every number opens the bills behind it, so the team can act and the supplier cannot argue it away.</span></div></li>
+   <li><svg><use href="#t"/></svg><div><b>Ask Kalkin</b><span class="muted">Ask anything about your purchases in plain words: "who is my top supplier?", "why did October cost more?". Kalkin answers with its own analysis and what to do next.</span></div></li>
+   <li><svg><use href="#t"/></svg><div><b>From potential to real savings</b><span class="muted">Each action is tracked until the new price shows on the bills.</span></div></li>
+   <li><svg><use href="#t"/></svg><div><b>Peace of mind</b><span class="muted">Not every factory loses lakhs: it depends on how it buys. Some find leaks and fix them; others learn their buying is clean, and Kalkin keeps checking every new bill.</span></div></li>
+  </ul>
+ </div>
+ <div class="grid4" style="margin-top:56px">
+  <div class="card"><div class="n">Any ERP</div><p class="muted" style="margin-top:10px">Reads the purchase report as it is: Tally, SAP or a local ERP. No integration project.</p></div>
+  <div class="card"><div class="n">On your computer</div><p class="muted" style="margin-top:10px">Desktop software. Purchase data stays in the factory; bills never leave it.</p></div>
+  <div class="card"><div class="n">Honest numbers</div><p class="muted" style="margin-top:10px">Only same-month prices are compared, so a leak cannot be argued away.</p></div>
+  <div class="card"><div class="n">Ready today</div><p class="muted" style="margin-top:10px">Version 20 with installer, licence, updates, daily backup and a 30-day trial.</p></div>
+ </div>
+</div></section>
+
+<section id="roadmap"><div class="wrap">
+ <div class="head"><div class="cap">Roadmap · It records, understands and acts</div><h2>The AI back office for every factory.</h2></div>
+ <div class="grid4">
+  <div class="card on"><span class="tag">Built</span><div class="n">Stage 01</div><h3>Prove</h3><p class="muted">Purchase Intelligence and Ask Kalkin find the money in purchasing.</p><div class="gate"><div class="cap">We move on when</div>Factories pay and see their savings.</div></div>
+  <div class="card"><span class="tag">Next</span><div class="n">Stage 02</div><h3>Expand</h3><p class="muted">An intelligence tool for every function: inventory, production, sales, finance, reading the factory's current ERP.</p><div class="gate"><div class="cap">We move on when</div>Factories use more than one Kalkin tool.</div></div>
+  <div class="card"><span class="tag">Then</span><div class="n">Stage 03</div><h3>Replace</h3><p class="muted">Kalkin's own ERP: every function with its intelligence and AI built in. The factory's data is already in Kalkin.</p><div class="gate"><div class="cap">We move on when</div>Customers move their ERP to Kalkin.</div></div>
+  <div class="card"><span class="tag">Later</span><div class="n">Stage 04</div><h3>Go global</h3><p class="muted">The same AI back office for factories in other countries.</p><div class="gate"><div class="cap">We move on when</div>250 paying factories in India.</div></div>
+ </div>
+ <h3 style="margin:56px 0 18px">Every function. Three layers.</h3>
+ <div class="matrixwrap"><div class="matrix">
+  <div></div><div class="h">Purchase</div><div class="h">Inventory</div><div class="h">Production</div><div class="h">Sales</div><div class="h">Accounting &amp; GST</div><div class="h">People &amp; payroll</div>
+  <div class="l"><b>Intelligence</b>Finds the money</div><div class="c on">✓ Built</div><div class="c">Planned</div><div class="c">Planned</div><div class="c">Planned</div><div class="c">Planned</div><div class="c">Planned</div>
+  <div class="l"><b>Ask Kalkin</b>Ask and act, with proof</div><div class="c on">✓ Built</div><div class="c">Planned</div><div class="c">Planned</div><div class="c">Planned</div><div class="c">Planned</div><div class="c">Planned</div>
+  <div class="l"><b>ERP</b>Daily entries</div><div class="c">Planned</div><div class="c">Planned</div><div class="c">Planned</div><div class="c">Planned</div><div class="c">Planned</div><div class="c">Planned</div>
+ </div></div>
+</div></section>
+
+<section id="plans"><div class="wrap">
+ <div class="head"><div class="cap">Plans</div><h2>One yearly licence per factory.</h2><p class="muted">30-day free trial on every laptop. Free 3-month pilot for our first factories.</p></div>
+ <div class="plans">
+  <div class="card"><div class="n">Purchase Intelligence</div><div class="price">₹23,999<small> / year</small></div><ul class="muted"><li>Every screen and report</li><li>Negotiation briefs and actions</li><li>Kalkin AI sorts your items</li></ul></div>
+  <div class="card on"><span class="tag">Ask Kalkin</span><div class="n">Purchase Intelligence with Ask Kalkin</div><div class="price">₹33,999<small> / year</small></div><ul class="muted"><li>Everything in Purchase Intelligence</li><li>Ask anything in your own words</li><li>Proof behind every number</li><li>What to do next, with the saving</li></ul></div>
+ </div>
+</div></section>
+
+<section id="contact"><div class="wrap">
+ <div class="head" style="margin-bottom:0"><div class="cap">Let's talk</div><h2>Subramanyam Thale</h2><p class="muted">Founder, Quantum 1 Technologies · Kalkin Intelligence</p></div>
+ <div class="contact"><a href="https://wa.me/917731925788"><span class="cap" style="display:block">WhatsApp</span>+91 77319 25788</a><a href="mailto:subramanyamthale@gmail.com"><span class="cap" style="display:block">Email</span>subramanyamthale@gmail.com</a></div>
+</div></section>
+</main>
+
+<footer><div class="wrap"><span>© 2026 Quantum 1 Technologies · Kalkin Intelligence</span><span>Made in India</span></div></footer>
+</body>
+</html>
